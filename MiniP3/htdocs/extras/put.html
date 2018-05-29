@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>PUT</title>
+</head>
+<body>
+    <h1>Change timer</h1>
+	Time(minutes): <input type="text" id="time" name="time"><br>
+    <button onclick="update()"> Change</button>
+    <script>
+    function update(){
+		time=document.getElementById('time').value;
+        req= new XMLHttpRequest();
+        req.open("PUT", "/extras/put");
+		msg='time='+time;
+        req.addEventListener("load",function(){
+            alert(this.responseText)
+        });
+        req.send(msg);
+    }
+    </script>
+</body>
+</html>

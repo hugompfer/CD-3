@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Delete</title>
+</head>
+<body>
+    <h1>Delete</h1>
+    <button onclick="remove()"> Delete File</button>
+    <script>
+    function remove(){
+        req= new XMLHttpRequest();
+        req.open("DELETE", "/extras/files/file.txt");
+        req.addEventListener("load",function(){
+            alert(this.responseText)
+        })
+        req.send();
+        
+    }
+    </script>
+</body>
+</html>

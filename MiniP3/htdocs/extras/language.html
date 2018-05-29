@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Language</title>
+</head>
+<body>
+    <h1>Ola to Current browser language</h1>
+    <button onclick="parse()">Translate</button>
+    <script>
+    function parse(){
+        req= new XMLHttpRequest();
+        req.open("GET", "/extras/translate");
+		req.addEventListener("load",function(){
+            alert(this.responseText)
+        });
+        req.send();
+    }
+    </script>
+</body>
+</html>
